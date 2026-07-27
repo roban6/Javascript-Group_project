@@ -1,38 +1,86 @@
-# 🚗 AutoCare Live
+# Javascript-Group_project
 
-AutoCare Live is a real-time vehicle service communication application built with Node.js, Express.js, and Socket.IO.
+# Real-Time Chat In-Class Exercise
 
-The application demonstrates how Socket.IO can enable real-time communication between a customer and a service advisor without requiring the browser to refresh.
+## Description
 
-## Features
+This project is a simple real-time chat application built using Node.js, Express, and Socket.IO.
 
-- Real-time customer and service advisor chat
-- Real-time vehicle service status updates
-- Real-time typing indicator
-- Live connection status
-- Customer and service advisor roles
-- Responsive user interface
+The goal of this exercise is to understand how real-time communication works between a client and a server. Users can open the application in multiple browser tabs and send messages that appear instantly without refreshing the page.
 
 ## Technologies Used
 
 - Node.js
 - Express.js
 - Socket.IO
-- HTML5
-- CSS3
+- HTML
+- CSS
 - JavaScript
 
-## Socket.IO Features Demonstrated
+## Project Structure
 
-### Real-Time Chat
+```text
+Javascript-Group_project/
+│
+├── public/
+│   ├── client.js
+│   ├── index.html
+│   └── style.css
+│
+├── server.js
+├── package.json
+├── package-lock.json
+├── .gitignore
+└── README.md
+```
 
-Customers and service advisors can send messages that are instantly displayed to both users.
+## Installation
 
-### Real-Time Status Updates
+### 1. Clone the repository
 
-The service advisor can update the vehicle's service status. The customer receives the update immediately without refreshing the page.
+```bash
+git clone YOUR_GITHUB_LINK
+```
 
-### Typing Indicator
+### 2. Open the project folder
 
-When a user is typing a message, the other user receives a real-time typing notification.
+```bash
+cd Javascript-Group_project
+```
+
+### 3. Install the required packages
+
+```bash
+npm install
+```
+
+### 4. Start the server
+
+```bash
+npm start
+```
+
+### 5. Open the application
+
+Open your browser and go to:
+
+```text
+http://localhost:3000
+```
+
+## Current Features
+
+
+- Real-time messaging
+- Send and receive messages instantly
+- Works between multiple browsr tabs
+- Simple and responsive user interface
+
+
+
+
+
+COMP 2068 Group Project
+
+
 

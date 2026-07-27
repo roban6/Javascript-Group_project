@@ -1,15 +1,33 @@
 {
+<<<<<<< HEAD
+  "name": "javascript-group_project",
+=======
   "name": "autocare",
+>>>>>>> b6ea57b490f2b5c6df90296c0922e081e27622d7
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+<<<<<<< HEAD
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/roban6/Javascript-Group_project.git"
+  },
+=======
+>>>>>>> b6ea57b490f2b5c6df90296c0922e081e27622d7
   "keywords": [],
   "author": "",
   "license": "ISC",
   "type": "commonjs",
+<<<<<<< HEAD
+  "bugs": {
+    "url": "https://github.com/roban6/Javascript-Group_project/issues"
+  },
+  "homepage": "https://github.com/roban6/Javascript-Group_project#readme",
+=======
+>>>>>>> b6ea57b490f2b5c6df90296c0922e081e27622d7
   "dependencies": {
     "express": "^5.2.1",
     "socket.io": "^4.8.3"

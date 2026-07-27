@@ -1,0 +1,732 @@
+<<<<<<< HEAD
+/* Make sizing easier */
+* {
+  box-sizing: border-box;
+}
+
+/* Style for the whole page */
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 30px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background:
+    radial-gradient(circle at top left, #dce8ff, transparent 35%),
+    radial-gradient(circle at bottom right, #eadcff, transparent 35%),
+    #eef2f8;
+
+  font-family: Arial, Helvetica, sans-serif;
+  color: #1f2937;
+}
+
+/* Main chat box */
+.chat-container {
+  width: 100%;
+  max-width: 760px;
+
+  padding: 24px;
+
+  background: rgba(255, 255, 255, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.8);
+  border-radius: 24px;
+
+  box-shadow: 0 20px 50px rgba(41, 50, 90, 0.16);
+}
+
+/* Chat heading area */
+.chat-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+
+  padding-bottom: 20px;
+  border-bottom: 1px solid #e5e7eb;
+}
+
+/* Small chat logo */
+.chat-logo {
+  width: 52px;
+  height: 52px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: linear-gradient(135deg, #5b35d5, #7c4dff);
+  border-radius: 16px;
+
+  font-size: 25px;
+
+  box-shadow: 0 8px 18px rgba(91, 53, 213, 0.25);
+}
+
+/* Main heading */
+h1 {
+  margin: 0;
+  font-size: 28px;
+}
+
+/* Text under the heading */
+.chat-header p {
+  margin: 5px 0 0;
+  color: #6b7280;
+}
+
+/* Online status badge */
+.online-status {
+  margin-left: auto;
+  padding: 7px 12px;
+
+  background: #dcfce7;
+  color: #15803d;
+
+  border-radius: 20px;
+
+  font-size: 13px;
+  font-weight: bold;
+}
+
+/* Information box */
+.chat-info {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  margin: 18px 0;
+  padding: 12px 14px;
+
+  background: #f2efff;
+  border: 1px solid #ded6ff;
+  border-radius: 12px;
+
+  color: #5133b5;
+}
+
+/* Remove default spacing from info text */
+.chat-info p {
+  margin: 0;
+}
+
+/* Messages area */
+#messages {
+  height: 390px;
+  margin: 0;
+  padding: 18px;
+
+  overflow-y: auto;
+  list-style: none;
+
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+}
+
+/* Each message */
+#messages li {
+  width: fit-content;
+  max-width: 78%;
+
+  margin-bottom: 12px;
+  padding: 11px 15px;
+
+  background: linear-gradient(135deg, #5b35d5, #7446e8);
+  color: white;
+
+  border-radius: 16px 16px 16px 5px;
+
+  overflow-wrap: anywhere;
+
+  box-shadow: 0 5px 12px rgba(91, 53, 213, 0.15);
+}
+
+/* Starting system message */
+#messages .system-message {
+  margin: 120px auto 0;
+
+  background: transparent;
+  color: #94a3b8;
+
+  box-shadow: none;
+
+  font-size: 14px;
+  text-align: center;
+}
+
+/* Message form */
+#message-form {
+  display: flex;
+  gap: 12px;
+
+  margin-top: 16px;
+}
+
+/* Message input */
+#message-input {
+  flex: 1;
+  min-width: 0;
+
+  padding: 14px 16px;
+
+  background: white;
+  border: 2px solid #e2e8f0;
+  border-radius: 13px;
+
+  font-size: 16px;
+
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s;
+}
+
+/* Input design when selected */
+#message-input:focus {
+  outline: none;
+
+  border-color: #6d42dd;
+  box-shadow: 0 0 0 4px rgba(109, 66, 221, 0.12);
+}
+
+/* Send button */
+button {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+
+  padding: 13px 22px;
+
+  border: none;
+  border-radius: 13px;
+
+  background: linear-gradient(135deg, #5b35d5, #7c4dff);
+  color: white;
+
+  font-size: 16px;
+  font-weight: bold;
+
+  cursor: pointer;
+
+  box-shadow: 0 8px 16px rgba(91, 53, 213, 0.22);
+
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+/* Change the button when hovered */
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 11px 20px rgba(91, 53, 213, 0.3);
+}
+
+/* Move the button back when clicked */
+button:active {
+  transform: translateY(0);
+}
+
+/* Arrow inside the send button */
+.send-icon {
+  font-size: 14px;
+}
+
+/* Information under the form */
+.chat-footer {
+  display: flex;
+  justify-content: space-between;
+
+  margin-top: 12px;
+
+  color: #94a3b8;
+  font-size: 12px;
+}
+
+/* Hide the label but keep it for accessibility */
+.sr-only {
+  position: absolute;
+
+  width: 1px;
+  height: 1px;
+  padding: 0;
+
+  overflow: hidden;
+  white-space: nowrap;
+
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
+/* Mobile screen layout */
+@media (max-width: 600px) {
+  body {
+    padding: 15px;
+  }
+
+  .chat-container {
+    padding: 18px;
+    border-radius: 18px;
+  }
+
+  .chat-header {
+    align-items: flex-start;
+  }
+
+  h1 {
+    font-size: 23px;
+  }
+
+  .online-status {
+    display: none;
+  }
+
+  #messages {
+    height: 340px;
+  }
+
+  #message-form {
+    flex-direction: column;
+  }
+
+  button {
+    justify-content: center;
+    width: 100%;
+  }
+
+  .chat-footer {
+    flex-direction: column;
+    gap: 5px;
+  }
+=======
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f4f7fb;
+    color: #1f2937;
+    min-height: 100vh;
+}
+
+
+/* =========================
+   TOP BAR
+========================= */
+
+.topbar {
+    background: #111827;
+    color: white;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.connection-status {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+}
+
+#connectionDot {
+    width: 10px;
+    height: 10px;
+    background: #f59e0b;
+    border-radius: 50%;
+    display: inline-block;
+}
+
+
+/* =========================
+   MAIN CONTAINER
+========================= */
+
+.container {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+
+/* =========================
+   SETUP SCREEN
+========================= */
+
+.setup-card {
+    max-width: 500px;
+    margin: 70px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 16px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08);
+    text-align: center;
+}
+
+.setup-card h1 {
+    margin-bottom: 12px;
+    font-size: 30px;
+}
+
+.setup-card p {
+    color: #6b7280;
+    margin-bottom: 30px;
+    line-height: 1.6;
+}
+
+
+/* =========================
+   FORM
+========================= */
+
+.form-group {
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #d1d5db;
+    border-radius: 8px;
+    font-size: 15px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    border-color: #2563eb;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.primary-button {
+    background: #2563eb;
+    color: white;
+    border: none;
+    padding: 13px 20px;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.primary-button:hover {
+    background: #1d4ed8;
+}
+
+
+/* =========================
+   APP SCREEN
+========================= */
+
+.app-screen {
+    display: block;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* =========================
+   WELCOME SECTION
+========================= */
+
+.welcome-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.welcome-section h1 {
+    font-size: 28px;
+    margin-bottom: 6px;
+}
+
+.welcome-section p {
+    color: #6b7280;
+}
+
+.online-badge {
+    background: #dcfce7;
+    color: #166534;
+    padding: 8px 14px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.vehicle-card,
+.status-card,
+.chat-card {
+    background: white;
+    border-radius: 14px;
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.06);
+}
+
+
+/* =========================
+   VEHICLE
+========================= */
+
+.vehicle-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+}
+
+.vehicle-header h2 {
+    margin-bottom: 5px;
+}
+
+.vehicle-header p {
+    color: #6b7280;
+}
+
+.vehicle-icon {
+    font-size: 50px;
+}
+
+.vehicle-details {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.vehicle-details div {
+    background: #f8fafc;
+    padding: 15px;
+    border-radius: 10px;
+}
+
+.vehicle-details span {
+    display: block;
+    font-size: 13px;
+    color: #6b7280;
+    margin-bottom: 6px;
+}
+
+.vehicle-details strong {
+    font-size: 15px;
+}
+
+
+/* =========================
+   SECTION TITLE
+========================= */
+
+.section-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-title h2 {
+    font-size: 20px;
+}
+
+#lastUpdated {
+    font-size: 13px;
+    color: #6b7280;
+}
+
+
+/* =========================
+   SERVICE STATUS
+========================= */
+
+.status-display {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 12px;
+}
+
+.status-icon {
+    font-size: 40px;
+}
+
+.status-display h3 {
+    margin-bottom: 6px;
+}
+
+.status-display p {
+    color: #6b7280;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   ADVISOR CONTROLS
+========================= */
+
+.advisor-controls {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #e5e7eb;
+}
+
+.advisor-controls label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.advisor-controls select {
+    margin-bottom: 12px;
+}
+
+
+/* =========================
+   CHAT
+========================= */
+
+.chat-messages {
+    height: 300px;
+    overflow-y: auto;
+    background: #f8fafc;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.system-message {
+    text-align: center;
+    color: #6b7280;
+    font-size: 13px;
+    margin: 10px 0;
+}
+
+
+/* Chat message */
+
+.chat-message {
+    max-width: 70%;
+    padding: 12px 15px;
+    margin-bottom: 12px;
+    border-radius: 12px;
+}
+
+.own-message {
+    background: #2563eb;
+    color: white;
+    margin-left: auto;
+}
+
+.other-message {
+    background: #e5e7eb;
+    color: #111827;
+    margin-right: auto;
+}
+
+.message-header {
+    display: flex;
+    justify-content: space-between;
+    gap: 15px;
+    font-size: 12px;
+    margin-bottom: 6px;
+}
+
+.message-text {
+    font-size: 15px;
+    line-height: 1.4;
+}
+
+
+/* =========================
+   CHAT INPUT
+========================= */
+
+.chat-input-area {
+    display: flex;
+    gap: 10px;
+}
+
+.chat-input-area input {
+    flex: 1;
+}
+
+#typingIndicator {
+    font-size: 13px;
+    color: #2563eb;
+    font-style: italic;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 768px) {
+
+    .topbar {
+        padding: 15px 20px;
+    }
+
+    .container {
+        margin: 20px auto;
+    }
+
+    .vehicle-details {
+        grid-template-columns: 1fr;
+    }
+
+    .welcome-section {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .chat-message {
+        max-width: 90%;
+    }
+
+    .chat-input-area {
+        flex-direction: column;
+    }
+
+    .setup-card {
+        margin: 30px auto;
+        padding: 25px;
+    }
+
+>>>>>>> b6ea57b490f2b5c6df90296c0922e081e27622d7
+}

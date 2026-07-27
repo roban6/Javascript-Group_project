@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<<<<<<< HEAD
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <title>Real-Time Chat Exercise</title>
+
+  <!-- Connect the CSS file -->
+  <link rel="stylesheet" href="style.css">
+=======
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>AutoCare Live</title>
+
+    <link rel="stylesheet" href="style.css">
+>>>>>>> b6ea57b490f2b5c6df90296c0922e081e27622d7
+</head>
+
+<body>
+
+<<<<<<< HEAD
+  <!-- Main chat container -->
+  <main class="chat-container">
+
+    <!-- Chat heading -->
+    <header class="chat-header">
+
+      <div class="chat-logo">
+        💬
+      </div>
+
+      <div>
+        <h1>Real-Time Chat</h1>
+
+        <p>
+          Chat instantly using Express and Socket.IO
+        </p>
+      </div>
+
+      <span class="online-status">
+        Online
+      </span>
+
+    </header>
+
+    <!-- Information shown above the messages -->
+    <section class="chat-info">
+      <span class="info-icon">ℹ️</span>
+
+      <p>
+        Open this page in two browser tabs and send a message.
+      </p>
+    </section>
+
+    <!-- All messages will be displayed here -->
+    <ul id="messages">
+
+      <!-- Starting message shown when the page opens -->
+      <li class="system-message">
+        Start the conversation by sending a message.
+      </li>
+
+    </ul>
+
+    <!-- Form used to send a message -->
+    <form id="message-form">
+
+      <!-- Hidden label for accessibility -->
+      <label class="sr-only" for="message-input">
+        Message
+      </label>
+
+      <!-- Input where the user types a message -->
+      <input
+        id="message-input"
+        type="text"
+        placeholder="Type your message here..."
+        autocomplete="off"
+        maxlength="200"
+        required
+      >
+
+      <!-- Button to send the message -->
+      <button type="submit">
+        <span>Send</span>
+        <span class="send-icon">➤</span>
+      </button>
+
+    </form>
+
+    <!-- Small information under the form -->
+    <footer class="chat-footer">
+      <span>Maximum 200 characters</span>
+      <span>Powered by Socket.IO</span>
+    </footer>
+
+  </main>
+
+  <!-- Load the Socket.IO client library -->
+  <script src="/socket.io/socket.io.js"></script>
+
+  <!-- Load our JavaScript file -->
+  <script src="client.js"></script>
+=======
+    <header class="topbar">
+        <div class="logo">
+            🚗 AutoCare Live
+        </div>
+
+        <div class="connection-status">
+            <span id="connectionDot"></span>
+            <span id="connectionText">Connecting...</span>
+        </div>
+    </header>
+
+
+    <main class="container">
+
+        <!-- User Setup -->
+        <section id="setupScreen" class="setup-card">
+
+            <h1>Welcome to AutoCare Live</h1>
+
+            <p>
+                Real-time communication between customers
+                and automotive service advisors.
+            </p>
+
+            <div class="form-group">
+
+                <label for="userName">
+                    Your Name
+                </label>
+
+                <input
+                    type="text"
+                    id="userName"
+                    placeholder="Enter your name"
+                >
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="userRole">
+                    Select Your Role
+                </label>
+
+                <select id="userRole">
+
+                    <option value="customer">
+                        Customer
+                    </option>
+
+                    <option value="advisor">
+                        Service Advisor
+                    </option>
+
+                </select>
+
+            </div>
+
+
+            <button id="joinButton" class="primary-button">
+                Enter AutoCare Live
+            </button>
+
+        </section>
+
+
+        <!-- Main Application -->
+        <section id="appScreen" class="app-screen hidden">
+
+            <div class="welcome-section">
+
+                <div>
+
+                    <h1 id="welcomeMessage">
+                        Welcome!
+                    </h1>
+
+                    <p>
+                        Real-time vehicle service management
+                    </p>
+
+                </div>
+
+                <div class="online-badge">
+                    🟢 Online
+                </div>
+
+            </div>
+
+
+            <!-- Vehicle Information -->
+
+            <div class="vehicle-card">
+
+                <div class="vehicle-header">
+
+                    <div>
+
+                        <h2>2022 Honda Civic</h2>
+
+                        <p>
+                            License Plate: ABC 123
+                        </p>
+
+                    </div>
+
+                    <div class="vehicle-icon">
+                        🚗
+                    </div>
+
+                </div>
+
+
+                <div class="vehicle-details">
+
+                    <div>
+                        <span>Current Mileage</span>
+                        <strong>85,000 km</strong>
+                    </div>
+
+                    <div>
+                        <span>Service Type</span>
+                        <strong>Oil Change + Inspection</strong>
+                    </div>
+
+                    <div>
+                        <span>Estimated Cost</span>
+                        <strong>$129.99</strong>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- Service Status -->
+
+            <div class="status-card">
+
+                <div class="section-title">
+
+                    <h2>Service Status</h2>
+
+                    <span id="lastUpdated">
+                        Waiting for update
+                    </span>
+
+                </div>
+
+
+                <div class="status-display">
+
+                    <div id="statusIcon" class="status-icon">
+                        🔵
+                    </div>
+
+                    <div>
+
+                        <h3 id="serviceStatus">
+                            Vehicle Checked In
+                        </h3>
+
+                        <p id="statusDescription">
+                            Your vehicle has been checked in
+                            and is waiting for inspection.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Advisor Controls -->
+
+                <div
+                    id="advisorControls"
+                    class="advisor-controls hidden"
+                >
+
+                    <label for="statusSelect">
+                        Update Vehicle Status
+                    </label>
+
+                    <select id="statusSelect">
+
+                        <option value="Vehicle Checked In">
+                            Vehicle Checked In
+                        </option>
+
+                        <option value="Inspection in Progress">
+                            Inspection in Progress
+                        </option>
+
+                        <option value="Waiting for Approval">
+                            Waiting for Approval
+                        </option>
+
+                        <option value="Repair in Progress">
+                            Repair in Progress
+                        </option>
+
+                        <option value="Ready for Pickup">
+                            Ready for Pickup
+                        </option>
+
+                    </select>
+
+                    <button
+                        id="updateStatusButton"
+                        class="primary-button"
+                    >
+                        Update Status
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Chat -->
+
+            <div class="chat-card">
+
+                <div class="section-title">
+
+                    <h2>💬 Live Chat</h2>
+
+                    <span id="typingIndicator"></span>
+
+                </div>
+
+
+                <div
+                    id="chatMessages"
+                    class="chat-messages"
+                >
+
+                    <div class="system-message">
+                        Welcome to AutoCare Live!
+                    </div>
+
+                </div>
+
+
+                <div class="chat-input-area">
+
+                    <input
+                        type="text"
+                        id="messageInput"
+                        placeholder="Type your message..."
+                    >
+
+                    <button
+                        id="sendButton"
+                        class="primary-button"
+                    >
+                        Send
+                    </button>
+
+                </div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <!-- Socket.IO Client -->
+
+    <script src="/socket.io/socket.io.js"></script>
+
+    <!-- Application JavaScript -->
+
+    <script src="script.js"></script>
+>>>>>>> b6ea57b490f2b5c6df90296c0922e081e27622d7
+
+</body>
+</html>
